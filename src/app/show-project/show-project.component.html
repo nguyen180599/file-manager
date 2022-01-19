@@ -1,0 +1,76 @@
+<button (click)="changeView()">Change View</button>
+<div class="folder-manager list" *ngIf="showAsList != 2">
+  <div class="header">
+    <div class="icon-move">
+      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="reply" role="img"
+           xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+           class="icon-back" (click)="back()">
+        <path fill="currentColor"
+              d="M8.309 189.836L184.313 37.851C199.719 24.546 224 35.347 224 56.015v80.053c160.629 1.839 288 34.032 288 186.258 0 61.441-39.581 122.309-83.333 154.132-13.653 9.931-33.111-2.533-28.077-18.631 45.344-145.012-21.507-183.51-176.59-185.742V360c0 20.7-24.3 31.453-39.687 18.164l-176.004-152c-11.071-9.562-11.086-26.753 0-36.328z"
+              class="">
+        </path>
+      </svg>
+      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="share" role="img"
+           xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+           class="icon-next">
+        <path fill="currentColor"
+              d="M503.691 189.836L327.687 37.851C312.281 24.546 288 35.347 288 56.015v80.053C127.371 137.907 0 170.1 0 322.326c0 61.441 39.581 122.309 83.333 154.132 13.653 9.931 33.111-2.533 28.077-18.631C66.066 312.814 132.917 274.316 288 272.085V360c0 20.7 24.3 31.453 39.687 18.164l176.004-152c11.071-9.562 11.086-26.753 0-36.328z"
+              class="">
+        </path>
+      </svg>
+    </div>
+    <span class="title-folder" *ngFor="let folder of listParent; index as index">
+    <span (click)="moveTo(folder)" style="font-weight: bold; margin-right: 10px"
+          [title]="folder.name">{{folder.name}}</span>
+    <span class="arrow-left" *ngIf="!(index == listParent.length - 1)">
+      <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-right" role="img"
+           xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"
+           class="svg-inline--fa fa-chevron-right fa-w-8 fa-fw fa-lg">
+        <path fill="currentColor"
+              d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"
+              class="">
+        </path>
+      </svg>
+    </span>
+      <!--  {{folder.name}}-->
+  </span>
+  </div>
+  <table class="table table-bordered " *ngIf="showAsList == 0">
+    <thead>
+    <tr>
+      <th class="item-name_header" width="45%">Name</th>
+      <th class="item-description_header">Preview</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let data of listData">
+      <td class="folder-data item-name_body" (dblclick)="data.isDir ? moveTo(data) : ''" [title]="data.name">
+        <div class="row-data">
+          <img class="icon"
+               [src]="data.isDir ? 'assets/images/icons/iconFolder.svg' : listIcon[checkType(data.linkFile)].link "
+               alt="">
+          <span><b>{{data.name}}</b></span>
+        </div>
+      </td>
+      <td class="item-description_body"></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="grid" *ngIf="showAsList == 1">
+    <div class="item-grid" *ngFor="let item of listData" (dblclick)="item.isDir ? moveTo(item) : ''"
+         [title]="item.name">
+      <img class="icon-grid"
+           [src]="item.isDir ? 'assets/images/icons/iconFolder.svg' : listIcon[checkType(item.linkFile)].link "
+           alt="">
+      <span class="grid-title">{{item.name}}</span>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showAsList == 2">
+  <app-tree-view></app-tree-view>
+</div>
+
