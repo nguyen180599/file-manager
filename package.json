@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "serve": "ng serve",
+    "serve": "ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "json": "json-server --watch db.json",
-    "start": "npm run serve & npm run json"
+    "start": "ng serve --open --port 4202"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
+    "@ionic/angular": "^6.0.12",
     "@progress/kendo-angular-common": "^2.0.2",
     "@progress/kendo-angular-inputs": "^7.5.2",
     "@progress/kendo-angular-intl": "^3.1.2",
@@ -36,6 +37,7 @@
     "fs-extra": "^10.0.0",
     "highcharts": "^9.3.2",
     "highcharts-angular": "^3.0.0",
+    "ionicons": "^6.0.1",
     "json-server": "^0.17.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
@@ -53,6 +55,7 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.5.2"
+    "typescript": "~4.5.2",
+    "@ionic/angular-toolkit": "latest"
   }
 }

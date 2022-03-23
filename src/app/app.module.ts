@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 
@@ -10,12 +10,18 @@ import {HighchartsChartModule} from "highcharts-angular";
 import { ShowProjectComponent } from './show-project/show-project.component';
 import {TreeViewModule} from "@progress/kendo-angular-treeview";
 import { TreeViewComponent } from './tree-view/tree-view.component';
+import { FormViewComponent } from './form-view/form-view.component';
+import {FormsModule} from "@angular/forms";
+import { MenuTestComponent } from './menu-test/menu-test.component';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowProjectComponent,
-    TreeViewComponent
+    TreeViewComponent,
+    FormViewComponent,
+    MenuTestComponent
   ],
     imports: [
         BrowserModule,
@@ -23,7 +29,9 @@ import { TreeViewComponent } from './tree-view/tree-view.component';
         HighchartsChartModule,
         HttpClientModule,
         TreeViewModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        FormsModule,
+        IonicModule.forRoot()
     ],
   providers: [],
   bootstrap: [AppComponent]

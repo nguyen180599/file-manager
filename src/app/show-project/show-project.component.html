@@ -1,4 +1,5 @@
-<button (click)="changeView()">Change View</button>
+<button (click)="changeView()" class="btn btn-primary">Change View</button>
+<button class="btn btn-success" routerLink="form">Form</button>
 <div class="folder-manager list" *ngIf="showAsList != 2">
   <div class="header">
     <div class="icon-move">
@@ -38,7 +39,7 @@
   <table class="table table-bordered " *ngIf="showAsList == 0">
     <thead>
     <tr>
-      <th class="item-name_header" width="45%">Name</th>
+      <th class="item-name_header">Name</th>
       <th class="item-description_header">Preview</th>
 
     </tr>
