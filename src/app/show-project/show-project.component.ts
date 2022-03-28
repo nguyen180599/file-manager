@@ -55,8 +55,7 @@ export class ShowProjectComponent implements OnInit {
     //   this.listFolder.sort((a,b) => a.id - b.id)
     //   console.log(this.listFolder)
     //   this.listFile.map(item => item.id += this.listFolder[this.listFolder.length - 1].id)
-    //
-    //   this.listData = this.listFolder.concat(this.listFile);
+       //   this.listData = this.listFolder.concat(this.listFile);
     //   this.listData.sort();
     // }
 
