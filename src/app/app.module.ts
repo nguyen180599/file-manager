@@ -14,7 +14,7 @@ import {FormsModule} from "@angular/forms";
 import {MenuTestComponent} from './menu-test/menu-test.component';
 import {MarkdownComponent} from "./markdown/markdown.component";
 import {IonicModule} from '@ionic/angular';
-import {MarkdownModule, MarkedOptions } from "ngx-markdown";
+import {MarkdownModule } from "ngx-markdown";
 
 import 'prismjs';
 import 'prismjs/components/prism-typescript.min.js';
@@ -38,8 +38,8 @@ import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
     TreeViewModule,
     BrowserAnimationsModule,
     FormsModule,
+    MarkdownModule.forRoot(),
     IonicModule.forRoot(),
-    MarkdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

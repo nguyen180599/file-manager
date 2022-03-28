@@ -1,3 +1,4 @@
 <textarea class="variable-textarea" [(ngModel)]="markdown"></textarea>
-<markdown class="variable-binding" [data]="markdown" #abc></markdown>
+<div class="variable-binding" #abc><markdown  [data]="markdown"></markdown></div>
+<!--<div class="variable-binding" [innerHTML]="markdown | language : 'typescript' | markdown" #abc></div>-->
 <button (click)="downloadMarkdown()">Download</button>
