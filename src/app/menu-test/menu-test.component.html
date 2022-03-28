@@ -1,0 +1,29 @@
+<div class="navigation" (click)="menuToggle = !menuToggle" [class]="menuToggle ? 'active' : ''" xmlns="">
+  <span [style]="menuToggle ? '--i: 9;' : '--i: 0;'" style=" --x: 0; --y: 0" routerLink="/form">
+   <ion-icon name="power-outline"></ion-icon>
+  </span>
+  <span style="--i: 1; --x: calc(-0.7071); --y: calc(-0.7071)">
+    <ion-icon name="camera-outline"></ion-icon>
+  </span>
+  <span style="--i: 2; --x: 0; --y: -1">
+    <ion-icon name="bag-outline"></ion-icon>
+  </span>
+  <span style="--i: 3; --x: calc(0.7071); --y: calc(-0.7071)">
+    <ion-icon name="call-outline"></ion-icon>
+  </span>
+  <span style="--i: 4; --x: 1; --y: 0">
+    <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+  </span>
+  <span style="--i: 5; --x: calc(0.7071); --y: calc(0.7071)">
+    <ion-icon name="refresh-outline"></ion-icon>
+  </span>
+  <span style="--i: 6; --x: 0; --y: 1">
+    <ion-icon name="volume-mute-outline"></ion-icon>
+  </span>
+  <span style="--i: 7; --x: calc(-0.7071); --y: calc(0.7071)">
+    <ion-icon name="image-outline"></ion-icon>
+  </span>
+  <span style="--i: 8; --x: -1; --y: 0" routerLink="/markdown">
+    <ion-icon name="map-outline"></ion-icon>
+  </span>
+</div>
